@@ -65,25 +65,57 @@ namespace Lab_6
             public void Jump(int[] result)
             {
                 if (_marks == null || _marks.GetLength(0) == 0 || _marks.GetLength(1) == 0 || result == null||result.Length==0||_index>1) return;
-                for (int i = 0; i < result.Length; i++)
+                if (_index == 0)
                 {
-                    _marks[_index, i] = result[i];
+                    for (int i = 0; i < 5; i++)
+                    {
+                        _marks[0, i] = result[i];
+                    }
+                    _index++;
                 }
-                _index++;
+                else if (_index == 1)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        _marks[1, i] = result[i];
+                    }
+                    _index++;
+                }
+                //                for (int i = 0; i < result.Length; i++)
+                //{
+                //_marks[_index, i] = result[i];
+                //}
+                //_index++;
             }
             public static void Sort(Participant[] array)
             {
                 if (array == null || array.Length == 0) return;
-                for (int i = 0; i < array.Length; i++)
+                for (int i = 1, k = 2; i < array.Length;)
                 {
-                    for (int j = 0; j < array.Length - i - 1; j++)
+                    if (i == 0 || array[i - 1].TotalScore >= array[i].TotalScore)
                     {
-                        if (array[j].TotalScore < array[j + 1].TotalScore)
-                        {
-                            (array[j], array[j + 1]) = (array[j + 1], array[j]);
-                        }
+                        i = k;
+                        k++;
+                    }
+                    else
+                    {
+                        Participant t = array[i];
+                        array[i] = array[i - 1];
+                        array[i - 1] = t;
+                        i--;
                     }
                 }
+                //if (array == null || array.Length == 0) return;
+                //for (int i = 0; i < array.Length-1; i++)
+                //{
+                //    for (int j = 0; j < array.Length - i - 1; j++)
+                //    {
+                //        if (array[j].TotalScore < array[j + 1].TotalScore)
+                //        {
+                //            (array[j], array[j + 1]) = (array[j + 1], array[j]);
+                //        }
+                //    }
+                //}
             }
             public void Print(Participant participant)
             {

@@ -71,17 +71,17 @@ namespace Lab_6
             private int _indteam;
 
             public string Name => _name;
-            public Team[] Teams
-            {
-                get
-                {
+            public Team[] Teams => _teams;
+//            {
+//get
+//{
 
-                    if (_teams == null) return null;
-                    Team[] copy = new Team[_teams.Length];
-                    Array.Copy(_teams, copy, copy.Length);
-                    return copy;
-                }
-            }
+//if (_teams == null) return null;
+//Team[] copy = new Team[_teams.Length];
+//Array.Copy(_teams, copy, copy.Length);
+//return copy;
+//}
+//}
 
             public Group(string name)
             {

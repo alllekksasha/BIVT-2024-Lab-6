@@ -43,7 +43,7 @@ namespace Lab_6
             {
                 get
                 {
-                    
+                    if (_penaltyTimes == null || _penaltyTimes.Length == 0) return true;
                     for (int s =0;  s < _penaltyTimes.Length; s++)
                     {
                         if (_penaltyTimes[s] == 10) return true;
