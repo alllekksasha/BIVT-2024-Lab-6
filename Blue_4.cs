@@ -15,7 +15,7 @@ namespace Lab_6
             private int[] _scores;
 
             public string Name => _name;
-            public int[] Score
+            public int[] Scores
             {
                 get
                 {
