@@ -24,11 +24,11 @@ namespace Lab_6
             {
                 _name = name;
                 _surname = surname;
-                _place = 18;
+                _place = 0;
             }
             public void SetPlace(int place)
             {
-                if ( place<=0) return;
+                if ( place<=0|| _place>0) return;
                 _place = place;
             }
             public void Print()
@@ -83,8 +83,8 @@ namespace Lab_6
                 get
                 {
                     if (_sportsmen == null) return 0;
-                    int maxi = _sportsmen[0].Place;
-                    for (int i = 1; i < _sportsmen.Length; i++)
+                    int maxi = 18;
+                    for (int i = 0; i < _sportsmen.Length; i++)
                     {
                         if (_sportsmen[i].Place != 0)
                         {
