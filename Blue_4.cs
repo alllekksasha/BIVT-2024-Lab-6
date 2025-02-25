@@ -106,11 +106,14 @@ namespace Lab_6
                 if (_teams == null || teams == null || teams.Length == 0) return;
 
                 int i = 0;
-                
-                
-                _teams[_indteam] = teams[i];
-                _indteam++;
-                i++;
+
+                while (_indteam < _teams.Length && i < teams.Length)
+                {
+                    _teams[_indteam] = teams[i];
+                    _indteam++;
+                    i++;
+                }
+               
             }
             public void Sort()
             {
@@ -129,9 +132,9 @@ namespace Lab_6
             public static Group Merge(Group group1, Group group2, int size)
             {
                 Group res = new Group("Финалисты");
-                //int n = size / 2;
+                int n = size / 2;
                 int i = 0, j = 0;
-                while (i < size && j < size)
+                while (i < n && j < n)
                 {
                     if (group1.Teams[i].TotalScore >= group2.Teams[j].TotalScore)
                     {
@@ -144,12 +147,12 @@ namespace Lab_6
                         j++;
                     }
                 }
-                while (i < size)
+                while (i < n)
                 {
                     res.Add(group1.Teams[i]);
                     i++;
                 }
-                while (j < size)
+                while (j < n)
                 {
                     res.Add(group2.Teams[j]);
                     j++;

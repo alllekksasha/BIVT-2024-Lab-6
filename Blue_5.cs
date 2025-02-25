@@ -24,7 +24,7 @@ namespace Lab_6
             {
                 _name = name;
                 _surname = surname;
-                _place = 0;
+                _place = 18;
             }
             public void SetPlace(int place)
             {
@@ -99,7 +99,7 @@ namespace Lab_6
             public Team(string name)
             {
                 _name = name;
-                _sportsmen = new Sportsman[18];
+                _sportsmen = new Sportsman[6];
                 _sportsmenind = 0;
             }
             public void Add(Sportsman sportsman)
