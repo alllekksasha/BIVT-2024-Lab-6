@@ -23,7 +23,7 @@ namespace Lab_6
                 get
                 {
 
-                    if (_penaltyTimes == null||_penaltyTimes.Length==0) return null; 
+                    if (_penaltyTimes == null) return null; 
                     int[] copy = new int[_penaltyTimes.Length];
                     Array.Copy(_penaltyTimes, copy, copy.Length);
                     return copy;
