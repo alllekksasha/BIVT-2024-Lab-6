@@ -28,7 +28,7 @@ namespace Lab_6
             }
             public void SetPlace(int place)
             {
-                if ( place<=0||_place>0) return;
+                if ( place<=0) return;
                 _place = place;
             }
             public void Print()
